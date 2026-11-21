@@ -80,26 +80,37 @@ assessmentButton.addEventListener(
     () => {
         const userName = userNameInput.value;
 
-        assessmentButton.style.backgroundColor = "#245986";
-
         if (userName.length === 0) {
             // 名前がなかったら処理を終了。
             return;
         }
 
-        resultDiv.innerText = ""; //結果のリセット
+        //診断結果表示処理
+        resultDiv.innerHTML = "";
+        //headerDiv
+        const headerDiv = document.createElement("div");
+        headerDiv.setAttribute("class", "card-header text-bg-primary");
+        headerDiv.innerText = "診断結果";
 
-        const heading = document.createElement("h3"); // h3タグの作成
-        heading.innerText = "診断結果"; // タグの内側のテキストを設定。
-        resultDiv.appendChild(heading); // divタグの子要素として追加。
+        //bodyDiv
+        const bodyDiv = document.createElement("div");
+        bodyDiv.setAttribute("class", "card-body");
 
         const paragraph = document.createElement("p");
-        const result = assessment(userName); //診断結果作成
+        paragraph.setAttribute("class", "card-text");
+        const result = assessment(userName);
         paragraph.innerText = result;
-        resultDiv.appendChild(paragraph);
+        bodyDiv.appendChild(paragraph);
 
-        console.log(assessment(userName));
+        // resultDivにBSのスタイル適用
+        resultDiv.setAttribute("class", "card");
 
+        // headerDivとbodyDivをresultDivにまとめる
+        resultDiv.appendChild(headerDiv);
+        resultDiv.appendChild(bodyDiv);
+
+
+        // ツイートエリア
         tweetDiv.innerText = "";
 
         const anchor = document.createElement("a");
@@ -120,7 +131,7 @@ assessmentButton.addEventListener(
 
     }
 );
-addEventListener(
+addEventListener( //特になかったからシンプルなイベントリスナーさん
     "keydown",
     (event) => {
         if (event.code === "Enter"){
