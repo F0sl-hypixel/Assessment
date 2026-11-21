@@ -1,5 +1,5 @@
 # あなたのいいところ診断
-***Assessment ver 1.0.1 Released!***
+***Assessment ver 1.0.2 Released!***
 ***あの伝説の診断が帰ってきた...***
 
 どうも、Tonnnelです。
@@ -10,3 +10,7 @@ JSとHTML,CSSを初めて使用して開発しましたよ。
 
 あ...Xで共有もご自由に。
 Postする時に変な#(ハッシュタグ)つくのなんなんだろう...
+
+#Change Log - ver 1.0.2
+・Visualが良くなりました。
+・生CSSではなく、Bootstrapを使用。
