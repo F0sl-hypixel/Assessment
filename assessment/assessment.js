@@ -72,7 +72,7 @@ function test() {
     );
 
     console.log("診断結果の文章のテスト終了");
-};
+}
 test();
 
 assessmentButton.addEventListener(
